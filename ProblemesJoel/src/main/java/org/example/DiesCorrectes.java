@@ -6,6 +6,10 @@ public class DiesCorrectes {
         public static void main(String[] args) {
 
 
+            // Ampliacio: programa que demana un numero de dia de l'any i un numero d'any i mostra per pantalla,
+            //Correcte: si el dia esta entre 1 i 365 i l'any no es bixest, o si el es 366 i l'any es bixest
+            //Incorrecte: en qualsevol altre cas
+
             Scanner ent = new Scanner(System.in);
             int dia = ent.nextInt();
             int any = ent.nextInt();
@@ -16,10 +20,12 @@ public class DiesCorrectes {
             else System.out.println("Incorrecte!");
 
 
-            // Ampliacio: programa que demana un numero de dia de l'any i un numero d'any i mostra per pantalla,
-            //Correcte: si el dia esta entre 1 i 365 i l'any no es bixest, o si el es 366 i l'any es bixest
-            //Incorrecte: en qualsevol altre cas
 
+            //Fer lo mateix amb un operador ternari
+            System.out.println( dia>=1 && dia<366 ? "Correcte per un any no bixest!":
+
+                    dia == 366 ? "Correcte per un any bixest!" : "Incorrecte"
+            );
         }
 
 }

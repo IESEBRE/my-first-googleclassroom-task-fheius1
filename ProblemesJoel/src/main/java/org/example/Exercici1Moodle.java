@@ -16,12 +16,11 @@ public class Exercici1Moodle {
 
         while (num1 <= num2) {
             if (num1 > num2) {
-                System.out.println(num1 % 2 == 0 ? num1 + " es parell" : num1 + " es imparell"); //Utilitzant lo metode ternari
+                valormesgran= num1;
+                num1 = num2;
+                num2=num1;
             }
-            else (num2 <= num1) {
-                valormesgran = num2;
-                System.out.println(valormesgran % 2 == 0 ? valormesgran + " es parell" : valormesgran + " es imparell"); //Utilitzant lo metode ternari
-            }
+            System.out.println(num1 % 2 == 0 ? num1 + " es parell" : num1 + " es imparell"); //Utilitzant lo metode ternari
             num1 = num1 + 1;
 
         }

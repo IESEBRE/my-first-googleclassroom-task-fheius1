@@ -6,13 +6,12 @@ public class AnimalsJordina {
 
     public static void main(String[] args) {
 
-        public static void main(String[] args) {
             Scanner ent = new Scanner(System.in);
             int numCasos = ent.nextInt();
 
             while(numCasos-->0){
                 //Declaració de variables
-                char numValors = ent.next()
+                int numValors = ent.nextInt();
                 int[] valors = new int[numValors];
                 int valorBuscat, nouValor;
 
@@ -23,7 +22,8 @@ public class AnimalsJordina {
                 }
 
 
-
+                valorBuscat=valors.length-1;
+                nouValor=valors.length-2;
                 //Mostrem el canvi
                 for (int i = 0; i < valors.length; i++) {
                     if( valors[i] == valorBuscat  ) System.out.print(nouValor);
@@ -33,6 +33,6 @@ public class AnimalsJordina {
                 System.out.println();
             }
         }
-    }
-
 }
+
+

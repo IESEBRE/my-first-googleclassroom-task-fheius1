@@ -7,10 +7,10 @@ public class EleccionsConsellEscolar {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
         int n = ent.nextInt();
-        char[][]matriu = new char[n][n];
+        char[][] matriu = new char[n][n];
 
 
-        for (int i = 0; i < matriu.length; i++) {
+       for (int i = 0; i < matriu.length; i++) {
             for (int j = 0; j < matriu[i].length; j++) {
                 if (i==0 || i== matriu.length-1 || j==0 || j == matriu.length-1 || i ==j) matriu[i][j]="X";
                 else matriu[i][j]='.';
@@ -18,8 +18,8 @@ public class EleccionsConsellEscolar {
             }
             System.out.println();
         }
-        }
     }
+}
 
 
 

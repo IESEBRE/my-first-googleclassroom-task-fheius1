@@ -22,7 +22,7 @@ public class BolasLobas {
                     System.out.print(paraula.charAt(num2));
                 }else if (i == num2){
                     System.out.print(paraula.charAt(num1));
-                } else paraula.charAt(i);
+                } else System.out.println(paraula.charAt(i));
             }
             System.out.println();
 

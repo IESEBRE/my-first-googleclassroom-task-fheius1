@@ -10,16 +10,25 @@ public class Minecra {
 
         while (casos-- > 0){
 
-            int corredors= ent.nextInt();
-            int diamants= Integer.parseInt(ent.nextLine());
-            int i = 0;
-            int j = diamants.contains("{}", i);
-            if (j == -1) break;
-            System.out.println(j);
-            i = j +1;
+            int linies = ent.nextInt();
+            ent.nextLine();
+
+            int totalDiamants = 0;
+
+            for (int i = 0; i < linies; i++) {
+                String corredor = ent.nextLine();
+
+                int comptador = 0;
+                int index = -1;
+
+                while ((index = corredor.indexOf("{}", index + 1)) != -1) {
+                    comptador++;
+                }
+
+                totalDiamants += comptador;
+            }
+
+            System.out.println(totalDiamants);
         }
-
-
-
     }
 }

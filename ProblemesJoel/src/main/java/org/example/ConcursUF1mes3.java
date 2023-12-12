@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ConcursUF1mes3 {
 
     public static void main(String[] args) {
+
         Scanner ent = new Scanner(System.in);
 
         int casos = ent.nextInt();
@@ -24,10 +25,8 @@ public class ConcursUF1mes3 {
             else System.out.println("GRACIES WEBCASTELLER");
 
         }
+        }
     }
-}
-
-
 
 /*
 public class ConcursUF1mes3 {

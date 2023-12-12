@@ -1,29 +1,30 @@
 package UF2;
 
-import java.util.Scanner;
-
-public class Metodes1 {
+class Exercici4 {
 
     public static void main(String[] args) {
-
-        Scanner ent= new Scanner(System.in);
-
-        int num= ent.nextInt();
-        String [] noms = "Ana Pere Toni".split("");
-        //String noms2 = "Ana Pere Toni".split("");
+        System.out.println(insertaCadena(null, null, 2));
+        System.out.println(insertaCadena("1234", null, -2));
+        System.out.println(insertaCadena(null, "56", -2));
+        System.out.println(insertaCadena("1234", "56", -2));
+        System.out.println(insertaCadena("1234", "56", -2));
+        System.out.println(insertaCadena("1234", "56", -2));
 
     }
 
-    //Crear un nou metode semblant a String.split
-   // public static String[]
+    public static String insertaCadena(String primer, String segon, int numero) {
+        //Tractament dels casos especials
+        //if (primer==null && segon==null) return null;
+        if (primer == null) return segon;
+        if (segon == null) return primer;
+        if (numero < 0) numero = 0;
+        if (numero > primer.length()) numero = primer.length();
 
-    //Crear un nou metode semblant a Scanner
-   // public static proximenter()
+        String trosDavant = primer.substring(0, numero);
+        String trosDarrera = primer.substring(numero);
 
 
+        return trosDavant + segon + trosDarrera;
 
-
-    //Crear un nou metode que no retorna res en principi
-    //public static void noretorna()
-
+    }
 }

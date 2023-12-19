@@ -1,0 +1,158 @@
+package UF2;
+
+import java.util.Arrays;
+
+public class Exercicis {
+
+    public static void main(String[] args) {
+
+        sumaNaturals(12);
+
+
+
+    }
+
+
+    //Exercici 4
+    public static String insertaCadena(String primer, String segon, int numero) {
+        //Tractament dels casos especials
+        if (primer == null) return segon;
+        if (segon == null) return primer;
+        if (numero < 0) numero = 0;
+        if (numero > primer.length()) numero = primer.length();
+
+        String trosDavant = primer.substring(0, numero);
+        String trosDarrera = primer.substring(numero);
+
+        return trosDavant + segon + trosDarrera;
+    }
+
+    //Exercici 7
+    public static String subcadena(String cadena, int ini, int fi) {
+        //Tractament dels casos especials
+        if (cadena == null) return null;
+        if (ini < 0) ini = 0;
+        if (fi <= 0 || ini >= cadena.length() || ini >= fi) return "";
+        if (fi > cadena.length()) fi = cadena.length();
+
+        return cadena.substring(ini, fi);
+    }
+
+
+    //Exercici 13
+    //De dalt cap a baix
+    public static int numvector(int[] num) {
+
+        //Cas especial
+        if (num==null || num.length==0 ) return 0;
+
+        boolean negatiu= (num[0]<0);
+
+        int potencia = (int) Math.pow(10.0, num.length - 1);
+        int resultat = 0;
+        for (int i = 0; i < num.length; i++) {
+            if (i==0 && num[0]<0) resultat = num[i] * potencia*-1;
+            else resultat = num[i] * potencia;
+            potencia = potencia / 10;
+        }
+        if (num[0]<0) resultat*=-1;
+        return resultat;
+    }
+
+    /* De baix cap a dalt
+     int potencia= 10;
+        int resultat=0;
+        for (int i = num.length-1; i >= 0 ; i++) {
+            resultat=+num[i]*potencia;
+            potencia= potencia*10;
+        }
+
+     */
+
+
+    //Exercici 8
+    public static int[] vectordigits(int num) {
+
+        int[] resultat = new int[Integer.toString(num).length()]; //Crear lo vector
+        //resultat= new int[(num+"").length()]; Manera mes curta de crear lo vector
+
+        for (int i = resultat.length-1; i >= 0 ; i++) {
+            resultat[i]= num % 10;
+            num= num /10;
+            
+        }
+        return resultat;
+    }
+
+
+
+    //Fer lo mateix pero que sigui en string , es a dir sense operacions matematiques, utilizant metodes com Integer, CharAt, etc..
+    public static int[] vectordigits2(int num) {
+        //Comprovar si el numero es negatiu
+        boolean negatiu= num<0;
+        if (negatiu) num*=-1;
+
+
+        //Passem el parametre a STRING
+        String text = Integer.toString(num);
+        int resultat [] = new int[text.length()];
+
+        for (int i = 0; i < text.length(); i++) {
+            resultat[i]=(char)text.charAt(i)-'0';
+        }
+
+        if (negatiu) num*=-1;
+
+        return resultat;
+    }
+
+
+    //Exercici 17
+    public static int[] tractaParametres(int ... num) {
+
+        //Casos especial
+        if (num == null || num.length==0 ) return null;
+
+        int suma, max, min;
+        suma= max = min = num [0];
+
+        for (int i = 1; i < num.length; i++) {
+            suma+=num[i];
+                if (num[i]>= max) max= num[i];
+                if (num[i]<= min) min= num[i];
+        }
+
+        return new int[]{suma, num.length, max, min};
+
+    }
+
+
+    //Exercici 29
+    public static int mcdRecursiu(int a, int b) {
+
+        if (a==b) return a;
+        if (a>b) return mcdRecursiu(a-b,b);
+
+        return mcdRecursiu(a, b-a);
+
+    }
+
+    //Exercici 30
+    public static int sumaNaturals(int n) {
+
+
+        if (n>0) return sumaNaturals(n+sumaNaturals(n-1));
+        if (n<0) return sumaNaturals(-1);
+
+        return sumaNaturals(0);
+    }
+
+
+
+
+}
+
+
+
+
+

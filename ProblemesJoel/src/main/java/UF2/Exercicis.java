@@ -6,12 +6,12 @@ public class Exercicis {
 
     public static void main(String[] args) {
 
-        sumaNaturals(12);
-
-
+        System.out.println(nombreCombinatoriRec(2,3));
+        System.out.println(nombreCombinatoriRec(1,3));
+        System.out.println(nombreCombinatoriRec(2,-3));
+        System.out.println(nombreCombinatoriRec(0,0));
 
     }
-
 
     //Exercici 4
     public static String insertaCadena(String primer, String segon, int numero) {
@@ -26,6 +26,9 @@ public class Exercicis {
 
         return trosDavant + segon + trosDarrera;
     }
+
+    //Exercici 6
+    
 
     //Exercici 7
     public static String subcadena(String cadena, int ini, int fi) {
@@ -140,19 +143,97 @@ public class Exercicis {
     //Exercici 30
     public static int sumaNaturals(int n) {
 
+        if (n==0) return 0;
+        if (n<0) return -1;
 
-        if (n>0) return sumaNaturals(n+sumaNaturals(n-1));
-        if (n<0) return sumaNaturals(-1);
+        //Cas recursiu
+        return  n+sumaNaturals(n-1);
 
-        return sumaNaturals(0);
+    }
+
+    //Exercici 31
+    public static double potenciaRec(double base, int exponent) {
+
+       if (exponent==0) return 1;
+
+        //Casos recursius
+        if (exponent>0) return base*potenciaRec(base, exponent-1);
+        return 1 / potenciaRec(base, -exponent); // o exponent * -1
+
+
+    }
+
+    //Exercici 33
+    public static int nombreCombinatoriRec(int n , int m) {
+
+        //Casos parada
+        if (n<m) return -1;
+        if (n==m || m==0) return 1;
+
+        //Casos recursius
+        return nombreCombinatoriRec(n-1, m-1)+nombreCombinatoriRec(n-1,m);
+
+
+    }
+
+    //Exercici 23
+    public static int factorial(int n)  {
+
+        if (n==0) return 0;
+        if (n<0) return 1;
+        return n*factorial(n-1);
+
     }
 
 
+    //Exercic 32
+    public static int fibonaci(int n) {
+        //Casos parada
+        if (n<0) return -1;
+        if (n==0 || n==1) return n;
+
+        //Cas recursiu
+        return fibonaci(n-1 + fibonaci(n-2));
+
+    }
+
+    public static int fibonaci2(int n){
+        //Casos parada
+        if (n<0) return -1;
+        if (n==0 || n==1) return n;
+
+        long primer=0;
+        long segon=1;
+        while (n>2){
+
+            //Calvular nous primer i segon
+            long temp= primer;
+            primer=segon;
+            segon=segon+temp;
+
+            //Decrement la n per evitar bucle infinit
+            n--;
+
+        }
+
+        return 0;
+
+    }
+
+
+    public static double potenciaE (int x){
+
+        double resultat=1;
+        if (x==0) return resultat;
+
+        for (int i = 1; i < 10; i++) {
+            resultat+= potenciaRec(x,i)/factorial(i);
+            
+        }
+
+        return 0;
+        
+    }
 
 
 }
-
-
-
-
-

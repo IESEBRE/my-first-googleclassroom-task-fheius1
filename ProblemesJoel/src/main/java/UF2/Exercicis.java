@@ -28,7 +28,7 @@ public class Exercicis {
     }
 
     //Exercici 6
-    
+
 
     //Exercici 7
     public static String subcadena(String cadena, int ini, int fi) {
@@ -234,6 +234,18 @@ public class Exercicis {
         return 0;
         
     }
+
+    //Exercici 36
+
+    /*public static double seguentPrimer (int n){
+
+        while (true){
+            n++;
+            if ()
+        }
+
+    }*/
+
 
 
 }

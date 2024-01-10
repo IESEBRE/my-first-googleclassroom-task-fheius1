@@ -23,19 +23,6 @@ public class EleccionsConsellEscolar {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
-
 /*
  scanner.close();
 

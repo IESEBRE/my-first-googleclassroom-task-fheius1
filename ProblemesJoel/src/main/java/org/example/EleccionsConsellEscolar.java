@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EleccionsConsellEscolar {
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
         int n = ent.nextInt();
         char[][] matriu = new char[n][n];
@@ -19,6 +19,8 @@ public class EleccionsConsellEscolar {
             System.out.println();
         }
     }
+
+    */
 }
 
 

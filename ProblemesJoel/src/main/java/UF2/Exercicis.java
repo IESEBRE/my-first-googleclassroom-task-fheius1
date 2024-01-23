@@ -82,7 +82,7 @@ public class Exercicis {
         for (int i = resultat.length-1; i >= 0 ; i++) {
             resultat[i]= num % 10;
             num= num /10;
-            
+
         }
         return resultat;
     }
@@ -164,8 +164,8 @@ public class Exercicis {
 
         for (int i = 1; i < num.length; i++) {
             suma+=num[i];
-                if (num[i]>= max) max= num[i];
-                if (num[i]<= min) min= num[i];
+            if (num[i]>= max) max= num[i];
+            if (num[i]<= min) min= num[i];
         }
 
         return new int[]{suma, num.length, max, min};
@@ -197,7 +197,7 @@ public class Exercicis {
     //Exercici 31
     public static double potenciaRec(double base, int exponent) {
 
-       if (exponent==0) return 1;
+        if (exponent==0) return 1;
 
         //Casos recursius
         if (exponent>0) return base*potenciaRec(base, exponent-1);
@@ -271,11 +271,11 @@ public class Exercicis {
 
         for (int i = 1; i < 10; i++) {
             resultat+= potenciaRec(x,i)/factorial(i);
-            
+
         }
 
         return 0;
-        
+
     }
 
     //Exercici 36
@@ -288,6 +288,31 @@ public class Exercicis {
         }
 
     }*/
+
+
+    //Exercici 39
+    public static boolean diaseguent (int dia, int mes, int any){
+        if (dia<1 || dia>31) return false;
+
+        if (mes<1 || mes>12) return false;
+
+
+
+        return true;
+    }
+
+
+    //Exercici 40
+
+    public static int[] diferenciadies(int dia, int mes, int any) {
+
+        return new int[]{0};
+
+    }
+
+
+    //Exercici
+
 
 
 }
